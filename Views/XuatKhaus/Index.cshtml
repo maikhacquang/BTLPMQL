@@ -1,0 +1,88 @@
+﻿@model IEnumerable<BTLPMQL.Models.XuatKhau>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color: blueviolet">Rượu Xuất Khẩu</h2>
+
+<p>
+    @Html.ActionLink("Xuất Khẩu", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th width="9%">
+            Tên Rượu
+        </th>
+        <th width="9%">
+            Nồng Độ
+        </th>
+        <th width="9%">
+            Tính Chất
+        </th>
+        <th width="9%">
+            Số Lượng
+        </th>
+        <th width="9%">
+            Đơn Vị
+        </th>
+        <th width="9%">
+            Thể Tích
+        </th>
+        <th width="9%">
+            Nguồn Gốc
+        </th>
+        <th width="9%">
+            Người Xuất
+        </th>
+        <th width="9%">
+            Người Nhập
+        </th>
+        <th width="9%">
+            Ghi Chú
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr style="border: 1px solid #808080; background-color: #ccc;border-style: none; width: 9%;">
+        <td>
+            @Html.DisplayFor(modelItem => item.TenRuou)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NongDo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinhChat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonVi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TheTich)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NguonGoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NguoiXuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NguoiNhap)
+        </td>
+        <td>
+            @Html.Raw(item.Note)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.IDRuou }) |
+            @Html.ActionLink("Chi Tiết", "Details", new { id=item.IDRuou }) |
+           
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,88 @@
+﻿@model BTLPMQL.Models.KhoRuou
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color: red">Xóa Mặt Hàng</h2>
+
+<hr />  
+<div>
+   
+    <dl class="dl-horizontal">
+        <dt>
+            Tên Rượu :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenRuou)
+        </dd>
+
+        <dt>
+            Nồng Độ :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NongDo)
+        </dd>
+
+        <dt>
+           Tính Chất :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhChat)
+        </dd>
+
+        <dt>
+            Số Lượng :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            Đơn Vị :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonVi)
+        </dd>
+
+        <dt>
+            Thể Tích :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheTich)
+        </dd>
+
+        <dt>
+            Nguồn Gốc :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguonGoc)
+        </dd>
+
+        <dt>
+            Đánh Giá :
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.DanhGia)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Danh Sách", "Index")
+        </div>
+    }
+</div>

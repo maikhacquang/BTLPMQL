@@ -1,0 +1,104 @@
+﻿@model BTLPMQL.Models.XuatKhau
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color: blueviolet">Xóa Rượu Đã Xuất </h2>
+
+
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            Tên Rượu :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenRuou)
+        </dd>
+
+        <dt>
+            Nồng Độ :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NongDo)
+        </dd>
+
+        <dt>
+            Tính Chất :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhChat)
+        </dd>
+
+        <dt>
+            Số Lượng :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            Đơn Vị :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonVi)
+        </dd>
+
+        <dt>
+            Thể Tích :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheTich)
+        </dd>
+
+        <dt>
+            Nguồn Gốc :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguonGoc)
+        </dd>
+
+        <dt>
+            Người Xuất :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiXuat)
+        </dd>
+
+        <dt>
+            Người Nhập :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiNhap)
+        </dd>
+
+        <dt>
+            Ghi Chú :
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Note)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay Lại", "Index")
+        </div>
+    }
+</div>
